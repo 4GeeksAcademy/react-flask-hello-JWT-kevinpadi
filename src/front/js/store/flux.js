@@ -18,7 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				};
 				try {
-					const response = await fetch('https://glorious-chainsaw-g475p49xxqxhpwqr-3001.app.github.dev/api/user', requestOptions);
+					const response = await fetch(`${process.env.BACKEND_URL}/api/user`, requestOptions);
 					const data = await response.json();
 
 					if (response.status === 200) {
@@ -50,7 +50,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				};
 				console.log('antes del fetch register');
 				try {
-					const response = await fetch('https://glorious-chainsaw-g475p49xxqxhpwqr-3001.app.github.dev/api/user', options);
+					const response = await fetch(`${process.env.BACKEND_URL}/api/user`, options);
 					const data = await response.json();
 
 					if (response.status === 200) {
@@ -84,7 +84,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				};
 				console.log('antes del fetch login');
 				try {
-					const response = await fetch('https://glorious-chainsaw-g475p49xxqxhpwqr-3001.app.github.dev/api/login', options);
+					const response = await fetch(`${process.env.BACKEND_URL}/api/login`, options);
 					const data = await response.json();
 
 					if (response.status === 200) {
@@ -116,7 +116,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// 			'Authorization': `Bearer ${token}`,
 			// 		}
 			// 	}
-			// 	const response = await fetch('https://glorious-chainsaw-g475p49xxqxhpwqr-3001.app.github.dev/api/valid-token', options)
+			// 	const response = await fetch(${process.env.BACKEND_URL}'/api/valid-token', options)
 			// 	const data = await response.json()
 			// 	console.log(data)
 			// 	if (data.logged) {
@@ -136,7 +136,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				};
 				try {
-					const response = await fetch('https://glorious-chainsaw-g475p49xxqxhpwqr-3001.app.github.dev/api/valid-token', options);
+					const response = await fetch(`${process.env.BACKEND_URL}/api/valid-token`, options);
 					const data = await response.json();
 
 					if (response.status === 200) {
